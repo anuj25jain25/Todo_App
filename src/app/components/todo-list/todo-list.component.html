@@ -1,0 +1,12 @@
+<div>
+  
+  <mat-selection-list #listItems>
+    <mat-list-option [ngClass]="{'strike': item.status}" [selected]="item.status" (click)="selectItem(item)" checkboxPosition="before" *ngFor="let item of list">
+      {{item.title}}
+    </mat-list-option>
+  </mat-selection-list>
+  
+  <p>
+    Completed Tasks: {{listItems.selectedOptions.selected.length}}
+  </p>
+</div>
